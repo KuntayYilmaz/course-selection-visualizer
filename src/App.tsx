@@ -52,6 +52,7 @@ import { Modal } from "./components/Modal";
 import { Comparison } from "./components/Comparison";
 import { Scenarios } from "./components/Scenarios";
 import { useWebMCP } from "./webmcp";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 function Planner() {
   const { plan, dispatch, storageError } = usePlanner();
@@ -302,6 +303,7 @@ function Planner() {
           <p>CMP & AID · Fall 2026–2027</p>
         </div>
         <div className="header-right">
+          <ThemeToggle />
           <button
             onClick={() => setScenariosOpen(true)}
             title="Saved scenarios"

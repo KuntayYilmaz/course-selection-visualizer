@@ -22,7 +22,11 @@ const palette = [
 export function courseColor(id: string) {
   let n = 0;
   for (const c of id) n = (n * 31 + c.charCodeAt(0)) >>> 0;
-  return palette[n % palette.length];
+  const index = n % palette.length;
+  return [
+    `var(--course-${index}-bg, ${palette[index][0]})`,
+    `var(--course-${index}-fg, ${palette[index][1]})`,
+  ];
 }
 type Event = {
   key: string;

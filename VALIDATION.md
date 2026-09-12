@@ -1,5 +1,12 @@
 # Verification record
 
+## Dark mode — 13 September 2026
+
+- Production build and all 42 project regression tests passed.
+- Isolated Edge browser checks passed for the light/dark toggle, keyboard activation, persistence after reload, preservation of course selections, system theme on first visit, and switching when browser storage is blocked.
+- Visually inspected dark desktop (1440 × 1000), mobile (375 × 812), scenarios dialog, generated results, and course editor. Mobile page has no horizontal overflow; the timetable retains its internal horizontal scrolling.
+- Print-media inspection confirmed the light text, backgrounds, and original course palette while dark mode remained selected. No browser console errors occurred in the theme checks.
+
 Verified locally on 12 September 2026.
 
 - Production build: TypeScript and Vite build passed.

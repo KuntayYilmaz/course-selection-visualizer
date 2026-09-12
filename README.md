@@ -16,6 +16,8 @@ Generate again after changing inputs or loading a scenario. The planner checks t
 
 Plans and scenarios stay in your current browser. **Export / Import** backs them up or transfers them between localhost, the live site, browsers, or devices. Use **Print** to print a timetable or save it as PDF.
 
+Use the sun/moon button in the header to switch light and dark mode. Your choice is saved in this browser; printed timetables stay light.
+
 ## Local development
 
 Requires Node.js 22.13+ and pnpm 11.19.0.
