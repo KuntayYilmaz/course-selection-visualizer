@@ -1,5 +1,10 @@
 # Verification record
 
+## App name and usage guide — 13 September 2026
+
+- Renamed the visible app, browser title, README heading, and PDF creator metadata to Hacettepe Course Planner. Existing storage keys and deployment URLs are preserved.
+- Added an info button beside the title opening a five-step guide. Verified keyboard opening, Escape/close actions, guide content, and desktop/light and 375px mobile/dark layouts in isolated Edge. No browser errors occurred; the production build passed.
+
 ## Direct PDF download — 13 September 2026
 
 - Added Save PDF for the displayed timetable, with a landscape weekly grid and paginated course/meeting details. Previews, stale snapshots, conflicts, unavailable periods, and missing ECTS are identified in the output.

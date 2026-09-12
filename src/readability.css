@@ -1,4 +1,17 @@
 /* Readable primary controls; compact metadata stays secondary. */
+.brand-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.planner-help ol {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  line-height: 1.6;
+}
+.planner-help li + li {
+  margin-top: 12px;
+}
 .course-title-button,
 .course-actions button,
 .department-tabs button,

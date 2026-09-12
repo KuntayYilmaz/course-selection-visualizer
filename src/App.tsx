@@ -54,6 +54,7 @@ import { Comparison } from "./components/Comparison";
 import { Scenarios } from "./components/Scenarios";
 import { useWebMCP } from "./webmcp";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { PlannerHelp } from "./components/PlannerHelp";
 
 function Planner() {
   const { plan, dispatch, storageError } = usePlanner();
@@ -337,9 +338,12 @@ function Planner() {
           <CalendarDays size={23} />
         </div>
         <div>
-          <h1>
-            Course Selection <span>Visualizer</span>
-          </h1>
+          <div className="brand-title">
+            <h1>
+              Hacettepe <span>Course Planner</span>
+            </h1>
+            <PlannerHelp />
+          </div>
           <p>CMP & AID · Fall 2026–2027</p>
         </div>
         <div className="header-right">

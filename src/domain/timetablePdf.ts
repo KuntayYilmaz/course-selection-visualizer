@@ -52,7 +52,7 @@ export function createTimetablePdf(input: TimetablePdfInput, font: Uint8Array) {
   doc.setProperties({
     title: "Weekly timetable",
     subject: "Hacettepe CMP & AID - Fall 2026-2027",
-    creator: "Course Selection Visualizer",
+    creator: "Hacettepe Course Planner",
   });
   const selected = input.variant.options
     .map((o) => input.courses.find((c) => c.id === o.courseId))

@@ -1,10 +1,12 @@
-# Course Selection Visualizer
+# Hacettepe Course Planner
 
 A timetable planner for Hacettepe CMP and AID students.
 
 [Open the app](https://kuntayyilmaz.github.io/course-selection-visualizer/)
 
 ## Usage
+
+The info icon beside the app name opens a short usage guide.
 
 1. Mark courses **Must take**, **Willing**, or **Excluded**. Use the clear buttons to reset selections.
 2. Set an elective count or ECTS target. Must-take technical electives count toward it.
