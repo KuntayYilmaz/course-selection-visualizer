@@ -1,0 +1,244 @@
+/* Readable primary controls; compact metadata stays secondary. */
+.course-title-button,
+.course-actions button,
+.department-tabs button,
+.catalog-filters label,
+.catalog-filters select,
+.target-fields label,
+.target-fields input,
+.target-fields select,
+.generate-button,
+.availability-head button,
+.results-tabs button,
+.sort-control label,
+.sort-control select,
+.result-name,
+.result-codes,
+.form-grid label,
+.section-editor label,
+.field {
+  font-size: 0.875rem;
+}
+.course-meta,
+.catalog-count,
+.catalog-footnote,
+.selection-summary,
+.course-code .chip,
+.target-label p,
+.fixed-note,
+.variant-toolbar label,
+.variant-toolbar select,
+.result-badges span,
+.result-meta,
+.variant-note,
+.results-info,
+.results-panel .panel-heading p,
+.favorite-status,
+.compare-check,
+.compare-footer p,
+.calendar-legend,
+.credit-strip span,
+.selected-course > span,
+.selected-course b,
+.selected-course small,
+.planner-footnote {
+  font-size: 0.75rem;
+}
+.course-meta,
+.catalog-count,
+.catalog-footnote,
+.selection-summary,
+.sort-control label,
+.result-meta,
+.results-info,
+.calendar-legend,
+.selected-course > span,
+.selected-course small,
+.planner-footnote,
+.credit-strip span {
+  color: #6c7c6b;
+}
+.course-actions {
+  flex-wrap: wrap;
+}
+.course-actions button {
+  font-size: 0.8rem;
+}
+.calendar-event strong {
+  font-size: 0.8rem;
+}
+.calendar-event span,
+.calendar-event small,
+.time-axis span,
+.day-headers > div > span {
+  font-size: 0.75rem;
+}
+.calendar-event {
+  gap: 3px;
+}
+.calendar-event small {
+  line-height: 1.25;
+}
+.break-note {
+  font-size: 0.7rem;
+}
+.selected-course {
+  align-items: start;
+}
+.selected-course i {
+  margin-top: 5px;
+}
+.selected-course b {
+  flex-shrink: 0;
+}
+.credit-strip {
+  gap: 6px;
+}
+.credit-strip span {
+  line-height: 1.5;
+}
+.meeting-editor label,
+.meeting-editor input,
+.meeting-editor select {
+  font-size: 0.8rem;
+}
+.result-codes {
+  line-height: 1.55;
+}
+.result-badges {
+  flex-wrap: wrap;
+}
+.availability-head {
+  gap: 6px;
+}
+.variant-toolbar select {
+  max-width: 230px;
+}
+.target-fields label:first-child {
+  min-width: 155px;
+}
+@media (max-width: 600px) {
+  .target-fields label:first-child {
+    min-width: 145px;
+  }
+  .availability-head {
+    flex-wrap: wrap;
+  }
+  .calendar-event strong {
+    font-size: 0.75rem;
+  }
+  .calendar-event span,
+  .calendar-event small {
+    font-size: 0.7rem;
+  }
+  .selected-course > span {
+    min-width: 130px;
+  }
+  .credit-strip span {
+    font-size: 0.7rem;
+  }
+  .calendar-legend {
+    font-size: 0.72rem;
+  }
+  .comparison-card .calendar-event strong {
+    font-size: 0.6rem;
+  }
+  .comparison-card .calendar-event span {
+    font-size: 0.55rem;
+  }
+}
+@media print {
+  .calendar-event strong {
+    font-size: 10px;
+  }
+  .calendar-event span,
+  .calendar-event small,
+  .time-axis span,
+  .day-headers > div > span {
+    font-size: 8px;
+  }
+  .credit-strip span,
+  .selected-course > span,
+  .selected-course b,
+  .selected-course small {
+    font-size: 8px;
+  }
+  .planner-footnote {
+    display: none;
+  }
+}
+
+.backup-text {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #63765d;
+}
+.backup-text summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.backup-text p {
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+.backup-text textarea {
+  font-family: monospace;
+  font-size: 0.75rem;
+  resize: vertical;
+}
+.intro.planner-instructions {
+  padding: 16px 24px;
+}
+.intro.planner-instructions p {
+  margin: 0;
+  font-size: 1rem;
+}
+.scenarios-body {
+  display: grid;
+  gap: 14px;
+}
+.scenario-row {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  min-width: 0;
+}
+.scenario-row h3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.scenario-row p {
+  margin: 8px 0;
+}
+.scenario-name-form,
+.scenario-actions,
+.scenario-delete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: end;
+}
+.scenario-name-form label {
+  display: grid;
+  gap: 6px;
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.scenario-delete p {
+  flex-basis: 100%;
+}
+.intro.planner-instructions {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.intro.planner-instructions button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+@media (max-width: 1100px) {
+  .header-right .local-tag {
+    display: none;
+  }
+}
