@@ -14,7 +14,7 @@ A timetable planner for Hacettepe CMP and AID students.
 
 Generate again after changing inputs or loading a scenario. The planner checks timetable conflicts and targets; it does not determine eligibility or graduation requirements.
 
-Plans and scenarios stay in your current browser. **Export / Import** backs them up or transfers them between localhost, the live site, browsers, or devices. Use **Print** to print a timetable or save it as PDF.
+Plans and scenarios stay in your current browser. **Export / Import** backs them up or transfers them between localhost, the live site, browsers, or devices. **Save PDF** beside the weekly timetable downloads its calendar and course details; **Print** opens the browser's print dialog.
 
 Use the sun/moon button in the header to switch light and dark mode. Your choice is saved in this browser; printed timetables stay light.
 

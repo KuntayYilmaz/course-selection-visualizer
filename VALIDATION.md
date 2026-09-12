@@ -1,5 +1,13 @@
 # Verification record
 
+## Direct PDF download — 13 September 2026
+
+- Added Save PDF for the displayed timetable, with a landscape weekly grid and paginated course/meeting details. Previews, stale snapshots, conflicts, unavailable periods, and missing ECTS are identified in the output.
+- All 44 project tests passed, including shared screen/PDF layout checks for CMP422's lab, overlapping blocks, and extended hours. TypeScript and the production build passed; the production dependency audit reported no known vulnerabilities.
+- Isolated Edge browser tests downloaded PDFs from desktop and 375px mobile layouts under `/course-selection-visualizer/`. Worker generation, lazy PDF loading, and the bundled font worked under that prefix. Empty-state disabling and recovery after a simulated font-download failure passed.
+- Rendered the downloaded PDFs with Poppler and visually inspected their weekly grids and course details. Extracted text with pypdf to verify the selected variant, credits, labs, Turkish characters, extended times, and conflict warnings. Desktop and mobile exports had identical text.
+- A 24-course fixture with long titles produced five pages; all courses, unknown meeting times, and explicitly unscheduled courses were retained. Text-boundary checks passed on every page.
+
 ## Dark mode — 13 September 2026
 
 - Production build and all 42 project regression tests passed.
@@ -25,6 +33,6 @@ Verified locally on 12 September 2026.
 
 ## Browser-specific limits of verification
 
-The Codex in-app preview did not expose a download event for the standard JSON download. The export payload was inspected and verified, and the app includes a copyable JSON fallback. Native file downloads and the print dialog should be used in a regular browser; print styles are included, but an actual printed PDF was not inspected in this environment.
+The Codex in-app preview did not expose a download event for the standard JSON download. The export payload was inspected and verified, and the app includes a copyable JSON fallback. The direct Save PDF download was tested in isolated Edge; the native print dialog remains browser-dependent.
 
 The GitHub Actions workflow runs the tests and production build before deploying. Check its latest run for remote deployment status.

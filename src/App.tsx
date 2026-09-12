@@ -12,6 +12,7 @@ import {
   LockKeyhole,
   Info,
   FolderOpen,
+  FileDown,
 } from "lucide-react";
 import {
   PlannerProvider,
@@ -95,6 +96,7 @@ function Planner() {
     [notice, setNotice] = useState("");
   const [tab, setTab] = useState("calendar");
   const [scenariosOpen, setScenariosOpen] = useState(false);
+  const [savingPdf, setSavingPdf] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const stale = !!generationKey && generationKey !== key;
   useEffect(() => () => worker.current?.terminate(), []);
@@ -290,6 +292,44 @@ function Planner() {
     : resultVariant
       ? issues
       : baseline.issues;
+  async function savePdf() {
+    if (savingPdf) return;
+    setSavingPdf(true);
+    const outdated = favoriteView ? favoriteView.inputKey !== key : stale;
+    const status = favoriteView
+      ? `Saved timetable${outdated ? " - outdated snapshot" : ""}`
+      : resultVariant
+        ? `Generated timetable${outdated ? " - inputs changed" : !complete ? " - search incomplete" : ""}`
+        : `Must-take preview${baseline.hasAlternatives ? " - provisional sections" : ""}`;
+    const snapshot = structuredClone({
+      courses: displayedCatalog,
+      variant: displayed,
+      selections: displayInput.selections,
+      blocks: favoriteView ? [] : displayInput.unavailable,
+      title:
+        favoriteView?.name ||
+        (resultVariant ? `Timetable ${selectedIndex + 1}` : "Weekly timetable"),
+      status,
+      issues: [
+        ...displayIssues,
+        ...(outdated
+          ? [
+              "This is an older timetable snapshot. Regenerate or revalidate it against your current plan.",
+            ]
+          : []),
+      ],
+    });
+    try {
+      const { saveTimetablePdf } = await import("./domain/timetablePdf");
+      await saveTimetablePdf(snapshot);
+    } catch (error) {
+      setNotice(
+        `PDF download failed. ${error instanceof Error ? error.message : "Please try again."} You can also use Print timetable and choose Save as PDF in your browser.`,
+      );
+    } finally {
+      setSavingPdf(false);
+    }
+  }
   return (
     <>
       <header className="app-header">
@@ -425,6 +465,16 @@ function Planner() {
                 </p>
               </div>
               <div className="calendar-actions">
+                <button
+                  onClick={() => void savePdf()}
+                  disabled={savingPdf || !displayedCourses.length}
+                  aria-label="Save weekly timetable as PDF"
+                  aria-busy={savingPdf}
+                  title="Download the displayed timetable as a PDF"
+                >
+                  <FileDown size={17} />
+                  {savingPdf ? "Saving..." : "Save PDF"}
+                </button>
                 {resultVariant && active && !favoriteView && (
                   <button
                     className={`icon-button ${plan.favorites.some((f) => f.id === resultVariant.id) ? "starred" : ""}`}

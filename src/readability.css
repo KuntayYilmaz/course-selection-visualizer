@@ -232,6 +232,10 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+.calendar-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 .intro.planner-instructions button {
   max-width: 100%;
   overflow-wrap: anywhere;
